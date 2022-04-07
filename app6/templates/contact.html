@@ -1,0 +1,46 @@
+<!doctype html>  
+<html>  
+   <body>  
+      <h2 style = "text-align: center;">Registration Form</h2>  
+          
+      {% for message in form.Name.errors %}  
+         <div>Error: {{ message }}</div>  
+      {% endfor %}  
+        
+      {% for message in form.Email.errors %}  
+         <div>Error: {{ message }}</div>  
+      {% endfor %}  
+      <br /> 
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+      <form action="/contact" method="POST" novalidate>  
+           
+            {{ form.hidden_tag() }}  
+              
+            <div style = "font-size:18px;" font-weight:bold; margin-left:150px;>  
+               {{ form.Name.label }}: {{ form.Name }}  
+               <br>  
+               {{ form.Gender.label }}: {{ form.Gender }}  
+               <br>
+               {{ form.Address.label }}:  {{ form.Address }}  
+               <br>  
+               {{ form.Email.label }}:  {{ form.Email }}  
+               <br>  
+               {{ form.Age.label }}: {{ form.Age }}  
+               <br>  
+               {{ form.Language.label}}:  {{ form.Language }}  
+               <br><br>  
+               {{ form.submit }}  
+            </div>  
+              
+         </fieldset>  
+      </form>  
+   </body>  
+</html>  

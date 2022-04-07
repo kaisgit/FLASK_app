@@ -1,0 +1,3 @@
+Currently doesnot write to logs because it takes up too much space.
+
+To write to logs, enable the log 'file_handler' in app/__init__.py

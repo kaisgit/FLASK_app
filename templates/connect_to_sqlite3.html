@@ -1,0 +1,33 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>List</title>  
+</head>  
+<body>  
+  
+<h3>Employee Information</h3>  
+<table border=5>  
+    <thead>  
+        <td>Title</td>  
+        <td>Slug</td>  
+        <td>Content</td>  
+        <td>Pub Date</td>  
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            <td>{{row["title"]}}</td>  
+            <td>{{row["slug"]}}</td>  
+            <td>{{row["content"]}}</td>  
+            <td>{{row["pub_date"]}}</td>  
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+  
+<a href="/">Go back to home page</a>  
+  
+</body>  
+</html>  
